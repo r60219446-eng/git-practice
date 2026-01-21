@@ -1,0 +1,24 @@
+name: First CI Pipeline
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run build script
+        run: ./build.sh
+
+      - name: Print secret (masked)
+        run: echo "Secret is ${{ secrets.MY_SECRET }}"
+
+      - name: Deploy (simulated)
+        run: ./deploy.sh
+

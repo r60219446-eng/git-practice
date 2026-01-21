@@ -19,3 +19,6 @@ jobs:
       - name: Print secret (masked)
         run: echo "Secret is ${{ secrets.MY_SECRET }}"
 
+      - name: Deploy (simulated)
+        run: ./deploy.sh
+

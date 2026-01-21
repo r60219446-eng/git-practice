@@ -16,3 +16,6 @@ jobs:
       - name: Run build script
         run: ./build.sh
 
+      - name: Print secret (masked)
+        run: echo "Secret is ${{ secrets.MY_SECRET }}"
+
